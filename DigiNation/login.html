@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Login - Digination</title>
+    <link rel="stylesheet" href="style.css">
+</head>    
+
+<body id="loginbody">
+    <div class="logindashboard">
+        <div class="logingreen">
+            <a href="index.html" class="back-btn">↩</a>
+            <p>DigiNation</p>
+        </div>
+        <div class="logincredentials">
+            <div class="tabs">
+                <button class="tab-btn active" onclick="showForm('login',this)">Login</button>
+                <button class="tab-btn" onclick="showForm('signup',this)">Signup</button>
+            </div>
+            <form id="loginform">
+                <label>CNIC/Email</label><br>
+                <input type="text" placeholder="Enter your email or CNIC" required><br><br>
+                <label>Password</label><br>
+                <input type="password" placeholder="Enter Password" required><br><br>
+                <button type="submit" class="loginsubmission">login</button>
+            </form>
+            <form id="signupform" style="display:none;">
+                <label>FullName</label><br>
+                <input type="text" placeholder="Enter your name" required><br><br>
+                <label>Contact</label><br>
+                <input type="text" placeholder="Enter your Phone Number" required><br><br>
+                <label>Email</label><br>
+                <input type="email" placeholder="Enter your email" required><br><br>
+                <label>CNIC</label><br>
+                <input type="text" placeholder="Enter your CNIC(without dashes)" required><br><br>
+                <label>Password</label><br>
+                <input type="password" placeholder="Enter Password" required><br><br>
+                <button type="submit" class="loginsubmission">Signup</button>
+            </form>
+        </div>
+    </div>
+    <script>
+    function showForm(type, btn) {
+        document.getElementById('loginform').style.display = type === 'login'? 'block' : 'none';
+        document.getElementById('signupform').style.display = type === 'signup'? 'block' : 'none';
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+    }
+    </script>
+</body>
+</html>
